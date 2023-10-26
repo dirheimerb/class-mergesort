@@ -1,0 +1,32 @@
+{
+  "name": "class-mergesort",
+  "version": "0.0.1",
+  "description": "",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "documentation": "./docs/index.html",
+
+  "scripts": {
+    "build": "tsc",
+    "doc": "typedoc --out docs src/index.ts"
+  },
+  "keywords": [
+    "merge",
+    "sort",
+    "mergesort",
+    "merge sort",
+    "merge-sort",
+    "class",
+    "typescript",
+    "ts"
+  ],
+  "author": "Bradley Dirheimer",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.8.9",
+    "typedoc": "^0.25.2",
+    "typescript": "^5.2.2"
+  }
+}

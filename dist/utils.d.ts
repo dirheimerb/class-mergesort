@@ -1,0 +1,40 @@
+/**
+ * Toggle a class name based on a condition.
+ *
+ * @param className - The class name to toggle.
+ * @param condition - The condition determining whether the class should be added.
+ * @returns The class name if the condition is true, otherwise an empty string.
+ */
+export declare function toggleClass(className: string, condition: boolean): string;
+/**
+ * Add a prefix to each class name in the list.
+ *
+ * @param prefix - The prefix to add.
+ * @param classNames - List of class names.
+ * @returns A single string with each class name prefixed.
+ */
+export declare function prefixClass(prefix: string, ...classNames: string[]): string;
+/**
+ * Add a suffix to each class name in the list.
+ *
+ * @param suffix - The suffix to add.
+ * @param classNames - List of class names.
+ * @returns A single string with each class name suffixed.
+ */
+export declare function suffixClass(suffix: string, ...classNames: string[]): string;
+/**
+ * Filter class names based on a custom condition function.
+ *
+ * @param condition - The condition function.
+ * @param classNames - List of class names.
+ * @returns A single string containing class names that meet the condition.
+ */
+export declare function filterClass(condition: (className: string) => boolean, ...classNames: string[]): string;
+/**
+ * Merges multiple class name strings or arrays, eliminating duplicates.
+ *
+ * @param args - Class name strings or arrays of class names to be merged.
+ * @returns A single string containing the merged and unique class names.
+ */
+export declare function mergeClass(...args: (string | string[])[]): string;
+//# sourceMappingURL=utils.d.ts.map
