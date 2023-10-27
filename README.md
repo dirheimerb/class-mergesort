@@ -4,6 +4,7 @@
 
 - [Class MergeSort](#class-mergesort)
   - [Installation](#installation)
+  - [Documentation](#documentation)
   - [API Overview](#api-overview)
     - [`toggleClass`](#toggleclass)
     - [`prefixClass`](#prefixclass)
@@ -30,6 +31,10 @@ yarn add -D class-mergesort
 ```bash
 pnpm i -D class-mergesort
 ```
+
+## Documentation
+
+[Docs](https://dirheimerb.github.io/class-mergesort)
 
 ## API Overview
 
