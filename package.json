@@ -30,6 +30,12 @@
     "ts"
   ],
   "author": "Bradley Dirheimer",
+  "website": "https://dirheimerb.github.io/class-mergesort",
+  "repository": {
+    "directory": "src",
+    "type": "git",
+    "url": "https://github.com/dirheimerb/class-mergesort.git"
+  },
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^29.5.6",
