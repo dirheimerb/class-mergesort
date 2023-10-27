@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="IE=edge" />
-    <title>toggleClass | class-mergesort</title>
+    <title>prefixClass | class-mergesort</title>
     <meta name="description" content="Documentation for class-mergesort" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="../assets/style.css" />
@@ -54,22 +54,23 @@
         <div class="tsd-page-title">
           <ul class="tsd-breadcrumb">
             <li><a href="../modules.html">class-mergesort</a></li>
-            <li><a href="toggleClass.html">toggleClass</a></li>
+            <li><a href="prefixClass.html">prefixClass</a></li>
           </ul>
-          <h1>Function toggleClass</h1>
+          <h1>Function prefixClass</h1>
         </div>
         <section class="tsd-panel">
           <ul class="tsd-signatures">
-            <li class="tsd-signature tsd-anchor-link" id="toggleClass">
-              <span class="tsd-kind-call-signature">toggle<wbr />Class</span
+            <li class="tsd-signature tsd-anchor-link" id="prefixClass">
+              <span class="tsd-kind-call-signature">prefix<wbr />Class</span
               ><span class="tsd-signature-symbol">(</span
-              ><span class="tsd-kind-parameter">className</span>,
-              <span class="tsd-kind-parameter">condition</span
+              ><span class="tsd-kind-parameter">prefix</span>,
+              <span class="tsd-signature-symbol">...</span
+              ><span class="tsd-kind-parameter">classNames</span
               ><span class="tsd-signature-symbol">)</span
               ><span class="tsd-signature-symbol">: </span
               ><span class="tsd-signature-type">string</span
               ><a
-                href="#toggleClass"
+                href="#prefixClass"
                 aria-label="Permalink"
                 class="tsd-anchor-icon"
                 ><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg
@@ -77,31 +78,31 @@
             </li>
             <li class="tsd-description">
               <div class="tsd-comment tsd-typography">
-                <p>Toggle a class name based on a condition.</p>
+                <p>Add a prefix to each class name in the list.</p>
               </div>
               <div class="tsd-parameters">
                 <h4 class="tsd-parameters-title">Parameters</h4>
                 <ul class="tsd-parameter-list">
                   <li>
                     <h5>
-                      <span class="tsd-kind-parameter">className</span>:
+                      <span class="tsd-kind-parameter">prefix</span>:
                       <span class="tsd-signature-type">string</span>
                     </h5>
                     <div class="tsd-comment tsd-typography">
-                      <p>The class name to toggle.</p>
+                      <p>The prefix to add.</p>
                     </div>
                     <div class="tsd-comment tsd-typography"></div>
                   </li>
                   <li>
                     <h5>
-                      <span class="tsd-kind-parameter">condition</span>:
-                      <span class="tsd-signature-type">boolean</span>
+                      <code class="tsd-tag ts-flagRest">Rest</code>
+                      <span class="tsd-signature-symbol">...</span
+                      ><span class="tsd-kind-parameter">classNames</span>:
+                      <span class="tsd-signature-type">string</span
+                      ><span class="tsd-signature-symbol">[]</span>
                     </h5>
                     <div class="tsd-comment tsd-typography">
-                      <p>
-                        The condition determining whether the class should be
-                        added.
-                      </p>
+                      <p>List of class names.</p>
                     </div>
                     <div class="tsd-comment tsd-typography"></div>
                   </li>
@@ -110,10 +111,7 @@
               <h4 class="tsd-returns-title">
                 Returns <span class="tsd-signature-type">string</span>
               </h4>
-              <p>
-                The class name if the condition is true, otherwise an empty
-                string.
-              </p>
+              <p>A single string with each class name prefixed.</p>
 
               <div class="tsd-comment tsd-typography"></div>
               <aside class="tsd-sources">
@@ -121,8 +119,8 @@
                   <li>
                     Defined in
                     <a
-                      href="https://github.com/dirheimerb/classname-x/blob/93eb417/src/index.ts#L14"
-                      >index.ts:14</a
+                      href="https://github.com/dirheimerb/classname-x/blob/93eb417/src/index.ts#L24"
+                      >index.ts:24</a
                     >
                   </li>
                 </ul>
@@ -332,7 +330,7 @@
                 >
               </li>
               <li>
-                <a href="prefixClass.html"
+                <a href="prefixClass.html" class="current"
                   ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                     <use href="#icon-64"></use></svg
                   >prefixClass</a
@@ -346,7 +344,7 @@
                 >
               </li>
               <li>
-                <a href="toggleClass.html" class="current"
+                <a href="toggleClass.html"
                   ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                     <use href="#icon-64"></use></svg
                   >toggleClass</a

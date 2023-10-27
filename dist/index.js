@@ -1,72 +1,57 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.classNameX = exports.mergeClass = exports.filterClass = exports.suffixClass = exports.toggleClass = void 0;
-const utils_1 = require("./utils");
-Object.defineProperty(exports, "toggleClass", { enumerable: true, get: function () { return utils_1.toggleClass; } });
-Object.defineProperty(exports, "suffixClass", { enumerable: true, get: function () { return utils_1.suffixClass; } });
-Object.defineProperty(exports, "filterClass", { enumerable: true, get: function () { return utils_1.filterClass; } });
-Object.defineProperty(exports, "mergeClass", { enumerable: true, get: function () { return utils_1.mergeClass; } });
-/**
- * Function to convert a variety of types into a valid class name string.
- *
- * @param mix - The input which can be a string, number, array, or object.
- * @returns A string after concatenation and validation.
- */
-function toVal(mix) {
-    let k;
-    let y;
-    let str = '';
-    // Handle strings and numbers directly
-    if (typeof mix === 'string' || typeof mix === 'number') {
-        str += mix;
-    }
-    else if (typeof mix === 'object' && mix !== null) { // Ensure it's not null as typeof null is 'object'
-        // If it's an array, loop through its elements
-        if (Array.isArray(mix)) {
-            for (k = 0; k < mix.length; k++) {
-                if (mix[k]) {
-                    y = toVal(mix[k]);
-                    if (y) {
-                        str && (str += ' ');
-                        str += y;
-                    }
-                }
-            }
-        }
-        else { // If it's an object, loop through its keys
-            for (k in mix) {
-                if (Object.prototype.hasOwnProperty.call(mix, k) && mix[k]) {
-                    str && (str += ' ');
-                    str += k;
-                }
-            }
-        }
-    }
-    return str;
+function o(t, r) {
+  return r ? t : '';
 }
-/**
-* Function to concatenate multiple class names into a single string.
-*
-* @param args - Spread of various types including string, number, array, and object.
-* @returns A concatenated string of class names.
-*/
-function classNameX(...args) {
-    let i = 0;
-    let mix;
-    let x;
-    let str = '';
-    // Loop through each argument
-    while (i < args.length) {
-        mix = args[i++];
-        if (mix) {
-            x = toVal(mix);
-            if (x) {
-                str && (str += ' ');
-                str += x;
-            }
-        }
-    }
-    return str;
+function l(t, ...r) {
+  return r.map((n) => `${t}${n}`).join(' ');
 }
-exports.classNameX = classNameX;
+function f(t, ...r) {
+  return r.map((n) => `${n}${t}`).join(' ');
+}
+function a(t, ...r) {
+  return r.filter(t).join(' ');
+}
+function g(...t) {
+  let r = new Set();
+  return (
+    t.forEach((n) => {
+      typeof n == 'string'
+        ? n.split(' ').forEach((e) => r.add(e))
+        : Array.isArray(n) && n.forEach((e) => r.add(e));
+    }),
+    Array.from(r).join(' ')
+  );
+}
+function s(t) {
+  let r,
+    n,
+    e = '';
+  if (typeof t == 'string' || typeof t == 'number') e += t;
+  else if (typeof t == 'object' && t !== null)
+    if (Array.isArray(t))
+      for (r = 0; r < t.length; r++)
+        t[r] && ((n = s(t[r])), n && (e && (e += ' '), (e += n)));
+    else
+      for (r in t)
+        Object.prototype.hasOwnProperty.call(t, r) &&
+          t[r] &&
+          (e && (e += ' '), (e += r));
+  return e;
+}
+function c(...t) {
+  let r = 0,
+    n,
+    e,
+    i = '';
+  for (; r < t.length; )
+    (n = t[r++]), n && ((e = s(n)), e && (i && (i += ' '), (i += e)));
+  return i;
+}
+export {
+  c as classNameX,
+  a as filterClass,
+  g as mergeClass,
+  l as prefixClass,
+  f as suffixClass,
+  o as toggleClass,
+};
 //# sourceMappingURL=index.js.map

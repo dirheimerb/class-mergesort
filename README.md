@@ -13,7 +13,6 @@
     - [`classNameX`](#classnamex)
   - [License](#license)
 
-
 Class MergeSort is a utility library designed to facilitate the manipulation and combination of CSS classes in TypeScript and JavaScript applications. It provides various utilities to toggle, prefix, suffix, filter, merge, and more.
 
 ## Installation
@@ -40,7 +39,7 @@ Takes a class name and a boolean condition. If the condition is true, it returns
 
 ```typescript
 const isActive = true;
-const activeClass = toggleClass("active", isActive);
+const activeClass = toggleClass('active', isActive);
 // Output: "active" if isActive is true, "" otherwise.
 ```
 
@@ -49,7 +48,7 @@ const activeClass = toggleClass("active", isActive);
 Prepends a specified prefix to each class name in the list. Particularly useful for frameworks like Bootstrap.
 
 ```typescript
-const prefixedClasses = prefixClass("btn-", "primary", "large");
+const prefixedClasses = prefixClass('btn-', 'primary', 'large');
 // Output: "btn-primary btn-large"
 ```
 
@@ -58,7 +57,7 @@ const prefixedClasses = prefixClass("btn-", "primary", "large");
 Appends a specified suffix to each class name in the list. Useful for BEM methodology.
 
 ```typescript
-const suffixedClasses = suffixClass("--disabled", "button", "input");
+const suffixedClasses = suffixClass('--disabled', 'button', 'input');
 // Output: "button--disabled input--disabled"
 ```
 
@@ -67,7 +66,11 @@ const suffixedClasses = suffixClass("--disabled", "button", "input");
 Filters class names based on a custom condition function. Only the class names that meet the condition will be included in the result.
 
 ```typescript
-const filteredClasses = filterClass(name => !name.includes("omit"), "button", "omit-me");
+const filteredClasses = filterClass(
+  (name) => !name.includes('omit'),
+  'button',
+  'omit-me',
+);
 // Output: "button"
 ```
 
@@ -77,15 +80,15 @@ Combines multiple class names into a single string, while eliminating duplicates
 
 ```typescript
 // Multiple class name strings
-const merged1 = mergeClass("btn btn-primary", "btn-secondary", "btn");
+const merged1 = mergeClass('btn btn-primary', 'btn-secondary', 'btn');
 // Output: "btn btn-primary btn-secondary"
 
 // Array of class names
-const merged2 = mergeClass(["btn", "btn-large"], ["btn-small", "btn"]);
+const merged2 = mergeClass(['btn', 'btn-large'], ['btn-small', 'btn']);
 // Output: "btn btn-large btn-small"
 
 // Mixed types
-const merged3 = mergeClass("btn btn-primary", ["btn-secondary", "btn-large"]);
+const merged3 = mergeClass('btn btn-primary', ['btn-secondary', 'btn-large']);
 // Output: "btn btn-primary btn-secondary btn-large"
 ```
 
